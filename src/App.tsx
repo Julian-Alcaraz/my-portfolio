@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Home from './pages/Home/Home';
 function App() {
   return (
     <div className="App">
@@ -19,6 +19,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <body>
+        <Home />
+      </body>
     </div>
   );
 }

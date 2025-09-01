@@ -158,4 +158,22 @@ npm run format # Para formatear automáticamente
 ```
 
 </li>
+<li>
+<strong>Deploy gh-pages</strong>
+
+```
+npm install --save-dev gh-pages
+
+```
+
+</li>
+<li>
+<strong>Add to package json</strong>
+
+```
+"deploy": "gh-pages -d dist"
+
+```
+
+</li>
 </ol>

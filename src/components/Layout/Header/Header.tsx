@@ -1,26 +1,27 @@
 import NavItem from './Components/NavItem/NavItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faMoon } from '@fortawesome/free-solid-svg-icons';
-
 import './Header.css';
+import ModeButton from './Components/ModeButton/ModeButton';
+import ContactButton from './Components/ContactButton/ContactButton';
 
 function Header() {
+  const navItems = [
+    { value: 'Inicio/yo', linkValue: 'me' },
+    { value: 'Skills', linkValue: 'skills' },
+    { value: 'Experience', linkValue: 'experience' },
+  ];
+
   return (
-    <div>
-      Header
-      <div className="border-4 flex justify-between py-4 px-10">
-        <NavItem value="Inicio/yo" linkValue="me" />
-        <NavItem value="Skills" linkValue="skills" />
-        <NavItem value="Experience" linkValue="experience" />
+    <div className="fixed top-0 left-0 w-full z-50">
+      <div className="border-4 border-amber-900 flex justify-between py-4 px-10  ">
+        {
+          //
+          navItems.map((item, index) => (
+            <NavItem key={index} value={item.value} linkValue={item.linkValue} />
+          ))
+        }
         <div>
-          <button>
-            <FontAwesomeIcon icon={faPhone} />
-          </button>
-          <button>
-    
-            <FontAwesomeIcon icon={faMoon} />
-            web color
-          </button>
+          <ContactButton></ContactButton>
+          <ModeButton></ModeButton>
         </div>
       </div>
     </div>

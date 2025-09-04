@@ -1,10 +1,13 @@
 import './App.css';
 import Layout from './components/Layout/Layout';
+import { ThemeProvider } from './providers/ThemeProvider';
 
 function App() {
   return (
     <>
-      <Layout></Layout>
+      <ThemeProvider>
+        <Layout></Layout>
+      </ThemeProvider>
     </>
   );
 }

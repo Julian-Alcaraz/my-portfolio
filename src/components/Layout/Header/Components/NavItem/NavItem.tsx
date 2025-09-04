@@ -8,7 +8,7 @@ interface NavItemProps {
 function NavItem({ value, linkValue }: NavItemProps) {
   return (
     <span>
-      <a href={linkValue}>{value}</a>
+      <a href={'#' + linkValue}>{value}</a>
     </span>
   );
 }

@@ -10,7 +10,7 @@ function ModeButton() {
     // Aquí podrías agregar lógica para cambiar clases del body, etc.
   };
   return (
-    <button onClick={toggleMode}>
+    <button onClick={toggleMode} className="cursor-pointer">
       <FontAwesomeIcon icon={isLightMode ? faMoon : faSun} />
     </button>
   );

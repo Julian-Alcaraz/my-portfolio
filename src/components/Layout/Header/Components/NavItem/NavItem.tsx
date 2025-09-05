@@ -1,9 +1,9 @@
 import './NavItem.css';
 
-interface NavItemProps {
+type NavItemProps = {
   value: string;
   linkValue: string;
-}
+};
 
 function NavItem({ value, linkValue }: NavItemProps) {
   return (

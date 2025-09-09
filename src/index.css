@@ -6,16 +6,23 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.light {
   /* Ligth mode */
   background-color: rgb(200, 227, 252);
+  color: black;
   /* paleta */
   /* #B1C2D2
     #718DA7
     #C7E3FC (rgb background)
     #405F7D
     #1C3852 */
+}
+
+.dark {
   /* dark Mode */
   /* dios proveera una paleta */
-  /* background-color: rgb(48, 48, 48);
-  color: rgb(235, 226, 226); */
+  background-color: rgb(48, 48, 48);
+  color: rgb(235, 226, 226);
 }

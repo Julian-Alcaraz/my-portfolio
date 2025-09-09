@@ -30,7 +30,7 @@ export default function Box() {
   }, []);
 
   return (
-    <mesh ref={meshRef} castShadow >
+    <mesh ref={meshRef} castShadow>
       <boxGeometry args={[2, 3, 2]} />
       <meshStandardMaterial opacity={1} attach="material-0" color="lightblue" />
       <meshStandardMaterial opacity={1} attach="material-1" color="lightgreen" />
@@ -42,7 +42,12 @@ export default function Box() {
       {/* Contenido en cada cara */}
       {isReady && (
         <Html position={[0, 0, 1.01]} center occlude transform distanceFactor={1.5}>
-          <div style={{ width: '100px', textAlign: 'center' }}>🌐 Front: Portfolio</div>
+          <div className="flex justify-center flex-col" style={{ width: '533px', textAlign: 'center', alignContent: 'center', alignItems: 'center', border: 'solid 1px black' }}>
+            🌐 Front: Portfolio
+            <div className="border  overflow-hidden" style={{ borderRadius: '100%', width: '90%' }}>
+              <img src="src/assets/profile.jpg" alt="Profile" height={200} />
+            </div>
+          </div>
         </Html>
       )}
       {isReady && (
@@ -67,6 +72,5 @@ export default function Box() {
         <div style={{ width: '100px', textAlign: 'center' }}>🛠️ Bottom: Tools</div>
       </Html> */}
     </mesh>
-    
   );
 }

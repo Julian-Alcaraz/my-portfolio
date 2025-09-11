@@ -2,8 +2,8 @@ import * as THREE from 'three';
 import { useContext, useEffect, useRef, useState, type JSX } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { Html, RoundedBox } from '@react-three/drei';
-import { ThemeContext } from '../../../../contexts/ThemeContext';
-import { themeColors } from '../../../../utils/themColors';
+import { ThemeContext } from '@contexts/ThemeContext';
+import { themeColors } from '@utils/themeColors';
 import { useSpring, a } from '@react-spring/three';
 
 export default function Box() {

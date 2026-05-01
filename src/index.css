@@ -1,28 +1,49 @@
-@import 'tailwindcss';
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Theme Transitions */
+  --transition-speed: 0.3s;
 }
 
-.light {
-  /* Ligth mode */
-  background-color: rgb(200, 227, 252);
-  color: black;
-  /* paleta */
-  /* #B1C2D2
-    #718DA7
-    #C7E3FC (rgb background)
-    #405F7D
-    #1C3852 */
+/* Modo Claro (Light Mode) - Fondo blanco, textos negros, acentos azules */
+body.light {
+  --bg-primary: #ffffff;
+  --bg-primary-rgb: 255, 255, 255;
+  --bg-secondary: #f4f7fb;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --accent-color: #2b6cb0; /* Azul */
+  --accent-hover: #1e4e8c;
+  --border-color: #e2e8f0;
+  --border-color-rgb: 226, 232, 240;
 }
 
-.dark {
-  /* dark Mode */
-  /* dios proveera una paleta */
-  background-color: rgb(48, 48, 48);
-  color: rgb(235, 226, 226);
+/* Modo Oscuro (Dark Mode) - Fondo negro, textos grises, acentos acordes */
+body.dark {
+  --bg-primary: #0a0a0a;
+  --bg-primary-rgb: 10, 10, 10;
+  --bg-secondary: #171717;
+  --text-primary: #e5e5e5;
+  --text-secondary: #a3a3a3;
+  --accent-color: #63b3ed; /* Azul claro para contraste en oscuro */
+  --accent-hover: #90cdf4;
+  --border-color: #262626;
+  --border-color-rgb: 38, 38, 38;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }

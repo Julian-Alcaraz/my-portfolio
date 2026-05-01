@@ -1,0 +1,246 @@
+.carouselWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* Espacio extra a los lados para las flechas si salen del contenedor */
+  padding: 0 1rem; 
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 550px;
+  border-radius: 24px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  /* Contenedor relativo para posicionar los slides absolutos encima */
+}
+
+/* Oscurecer sombra en modo oscuro */
+:global(body.dark) .carouselContainer {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.carouselContainer:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+:global(body.dark) .carouselContainer:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.carouselTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* Slides absolutos para permitir el fade-in */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s;
+  background-color: var(--bg-secondary);
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+/* --- Slide 1: Retrato Circular --- */
+.imageSlide {
+  padding: 2rem;
+}
+
+.imageWrapper {
+  height: 90%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 8px;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+:global(body.dark) .imageWrapper {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* --- Slide 2: Datos Minimalistas --- */
+.dataSlide {
+  text-align: center;
+}
+
+.slideTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+.dataList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* Generoso gap, sin lineas divisorias */
+  width: 100%;
+}
+
+.dataItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dataLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+
+.dataValue {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  color: var(--text-primary); /* Minimalista, se adapta al modo */
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.dataLink {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+.dataLink:hover {
+  color: var(--accent-color);
+}
+
+/* --- Arrow Controls --- */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 0; /* Ocultas por defecto */
+}
+
+/* Extremos laterales, levemente hacia afuera o borde exacto */
+.arrowBtnLeft {
+  left: -1rem;
+}
+
+.arrowBtnRight {
+  right: -1rem;
+}
+
+/* Aparecen suavemente con el hover del contenedor general (wrapper) */
+.carouselWrapper:hover .arrowBtn {
+  opacity: 0.6;
+}
+
+.arrowBtn:hover {
+  opacity: 1 !important;
+  color: var(--accent-color);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* --- Dots Navigation --- */
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 0;
+}
+
+.dot.active {
+  background-color: var(--accent-color);
+  transform: scale(1.5);
+}
+
+.dot:hover:not(.active) {
+  background-color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    aspect-ratio: 1 / 1;
+    max-height: 450px;
+  }
+  
+  .dataList {
+    gap: 1.25rem;
+  }
+  
+  .arrowBtn {
+    display: none;
+  }
+  
+  .imageWrapper {
+    height: 75%;
+  }
+}

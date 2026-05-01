@@ -1,0 +1,41 @@
+.meSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.layoutContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 3rem;
+}
+
+.infoColumn {
+  flex: 0 0 60%; /* 60% of the width */
+}
+
+.carouselColumn {
+  flex: 0 0 calc(40% - 3rem); /* 40% of the width minus gap */
+}
+
+@media (max-width: 900px) {
+  .layoutContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .infoColumn, .carouselColumn {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  
+  /* Reverse order on mobile so Info appears first */
+  .infoColumn {
+    order: -1;
+  }
+}

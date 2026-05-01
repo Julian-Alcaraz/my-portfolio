@@ -1,12 +1,14 @@
-import './ContactButton.css';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaEnvelope } from 'react-icons/fa';
+import cvData from '../../../../../data/cvData.json';
+import styles from './ContactButton.module.css';
 
 function ContactButton() {
   return (
-    <button>
-      <FontAwesomeIcon icon={faPhone} />
-    </button>
+    <a href={`mailto:${cvData.personal.email}`} className={styles.contactBtn}>
+      <span className={styles.icon}><FaEnvelope /></span>
+      Contacto
+    </a>
   );
 }
+
 export default ContactButton;

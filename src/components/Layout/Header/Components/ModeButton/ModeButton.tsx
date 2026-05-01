@@ -1,20 +1,21 @@
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import './ModeButton.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaMoon, FaSun } from 'react-icons/fa';
 import { useContext } from 'react';
 import { ThemeContext } from '@contexts/ThemeContext';
+import styles from './ModeButton.module.css';
 
 function ModeButton() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  // const [isLightMode, setIsLightMode] = useState(true);
-  // const toggleMode = () => {
-  //   setIsLightMode((prev) => !prev);
-  //   // Aquí podrías agregar lógica para cambiar clases del body, etc.
-  // };
+
   return (
-    <button onClick={toggleTheme} className="cursor-pointer">
-      {theme}
-      <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} />
+    <button 
+      onClick={toggleTheme} 
+      className={styles.toggleBtn}
+      aria-label="Alternar modo claro/oscuro"
+      title="Alternar modo claro/oscuro"
+    >
+      <span className={styles.icon}>
+        {theme === 'dark' ? <FaSun /> : <FaMoon />}
+      </span>
     </button>
   );
 }

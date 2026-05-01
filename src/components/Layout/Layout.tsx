@@ -1,18 +1,24 @@
-import Experience from '../Experience/Experience';
-import Me from '../Me/Me';
-import Skill from '../Skills/Skill';
-import Footer from './Footer/Footer';
 import Header from './Header/Header';
-import './Layout.css';
+import Footer from './Footer/Footer';
+import Me from '../Me/Me';
+import { ExperienceList } from '../ExperienceList/ExperienceList';
+import { SkillsGrid } from '../SkillsGrid/SkillsGrid';
+import { ProjectsList } from '../ProjectsList/ProjectsList';
+
+import cvData from '../../data/cvData.json';
+import styles from './Layout.module.css';
 
 function Layout() {
   return (
-    <div className="border-2 m-1">
-      <Header></Header>
-      <Me></Me>
-      <Skill></Skill>
-      <Experience></Experience>
-      <Footer></Footer>
+    <div className={styles.layoutContainer}>
+      <Header />
+      <main className={styles.mainContent}>
+        <Me profile={cvData.personal} />
+        <SkillsGrid skills={cvData.skills} />
+        <ExperienceList experiences={cvData.experience} />
+        <ProjectsList projects={cvData.projects} />
+      </main>
+      <Footer />
     </div>
   );
 }

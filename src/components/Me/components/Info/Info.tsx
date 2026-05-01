@@ -1,26 +1,38 @@
-// import { useEffect, useState } from 'react';
-import './Info.css';
-type InfoProps = {
-  profile: Profile | null;
-};
-function Info({ profile }: InfoProps) {
-  console.log(profile);
-  if (!profile) {
-    return <h2>No se encontraron los datos</h2>;
-  }
+import styles from './Info.module.css';
 
+type PersonalData = {
+  name: string;
+  title: string;
+  about: string;
+  email: string;
+  github: string;
+};
+
+type InfoProps = {
+  profile: PersonalData;
+};
+
+export default function Info({ profile }: InfoProps) {
   return (
-    <div>
-      Me {profile.name}
-      MI TITULO
-      <br />
-      Desarrollador Full stack
-      <br />
-      boton de contacto (lleva abajo) boton de telefono
-      <br />
-      botonera de redes sociales
+    <div className={styles.infoContainer}>
+      <span className={styles.greeting}>Hola, soy</span>
+      <h1 className={styles.name}>{profile.name}</h1>
+      <h2 className={styles.title}>{profile.title}</h2>
+      <p className={styles.about}>{profile.about}</p>
+      
+      <div className={styles.actions}>
+        <a href={`mailto:${profile.email}`} className={styles.btnPrimary}>
+          Contactar
+        </a>
+        <a 
+          href={`https://github.com/${profile.github}`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={styles.btnSecondary}
+        >
+          GitHub
+        </a>
+      </div>
     </div>
   );
 }
-
-export default Info;

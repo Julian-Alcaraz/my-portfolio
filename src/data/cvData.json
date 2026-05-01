@@ -1,0 +1,82 @@
+{
+  "personal": {
+    "name": "Julián Alcaraz",
+    "title": "Técnico Universitario en Desarrollo Web",
+    "about": "Desarrollador web Full Stack con sólida formación técnica y experiencia en desarrollo de aplicaciones web y móviles. Comprometido con la calidad, la mejora continua y el trabajo colaborativo. Apasionado por crear soluciones funcionales, eficientes y escalables, adaptadas a las necesidades del cliente.",
+    "email": "julianalcaraz4@gmail.com",
+    "location": "Neuquén Capital",
+    "phone": "2994592870",
+    "github": "Julian-Alcaraz",
+    "linkedin": "https://www.linkedin.com/in/julian-alcaraz-33084b282",
+    "birthDate": "09/02/2003"
+  },
+  "education": [
+    {
+      "id": 1,
+      "institution": "Universidad Nacional del Comahue",
+      "degree": "Técnico en Desarrollo Web",
+      "graduationYear": "2024"
+    },
+    {
+      "id": 2,
+      "institution": "Colegio secundario E.P.E.T N° 20",
+      "degree": "Técnico Programador",
+      "graduationYear": "2021"
+    }
+  ],
+  "skills": {
+    "frontend": ["Angular", "React", "HTML", "CSS", "JavaScript", "Bootstrap"],
+    "backend": ["Node.js (Express, NestJS)", "C#", "PHP (Kumbia, Phalcon)"],
+    "mobile": ["Flutter", "Capacitor", "Android", "iOS", "PWA"],
+    "databases": ["MySQL", "PostgreSQL", "SQL"],
+    "devops": ["Docker", "Linux Servers", "Windows Servers"],
+    "tools": ["Git", "GitHub", "Bitbucket", "Scrum", "Kanban"],
+    "languages": ["Inglés intermedio"]
+  },
+  "experience": [
+    {
+      "id": 1,
+      "company": "Ceibustech",
+      "role": "Full Stack Developer",
+      "startDate": "Septiembre 2025",
+      "endDate": "Actualidad",
+      "description": "Desarrollo de BackEnd con C# y frontend con Angular. Análisis y relevamiento de requerimientos. Gestión de Base de datos MySQL. Implementación de metodologías ágiles (Scrum y Kanban). Trabajo colaborativo usando Git/GitHub."
+    },
+    {
+      "id": 2,
+      "company": "IMPS",
+      "role": "Full Stack Developer",
+      "startDate": "Diciembre 2023",
+      "endDate": "Septiembre 2025",
+      "description": "Desarrollo con Capacitor migrando webs Angular a Android e iOS para el sector Fintech. Desarrollo de web multiplataforma (WebPagos - pronto pago). Desarrollo de BackEnd con Node.js (Express) y frontend con Angular. Desarrollo con PHP utilizando el framework Phalcon. Manejo de servidores Linux y Windows para host de proyectos."
+    },
+    {
+      "id": 3,
+      "company": "INIT-DEV",
+      "role": "Mobile Developer (Pasantía)",
+      "startDate": "Julio 2021",
+      "endDate": "Octubre 2021",
+      "description": "Desarrollo de aplicaciones Mobile con Flutter. Trabajo colaborativo con Git (BitBucket) e implementación de metodologías ágiles."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Mantenimiento de Plataforma Web (Independiente)",
+      "company": "Fundación Cif",
+      "startDate": "Feb 2025",
+      "endDate": "Oct 2025",
+      "description": "Análisis, resolución de bugs, testing y actualización en producción (PHP).",
+      "stack": ["Kumbia PHP", "Docker"]
+    },
+    {
+      "id": 2,
+      "name": "Sistema de Gestión Web (Full Stack Developer)",
+      "company": "Fundación Sol",
+      "startDate": "Jul 2024",
+      "endDate": "Jul 2025",
+      "description": "Desarrollo desde cero, análisis, diseño, implementación, metodologías ágiles.",
+      "stack": ["Angular", "Nest.js", "Docker", "Git"]
+    }
+  ]
+}

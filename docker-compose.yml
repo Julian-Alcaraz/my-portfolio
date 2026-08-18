@@ -1,0 +1,11 @@
+
+
+services:
+  portfolio:
+    build: .
+    container_name: my-portfolio-app
+    ports:
+      # "puerto_del_servidor_ubuntu:puerto_del_contenedor"
+      # Usamos el 80 para que accedas directamente sin escribir el puerto en el navegador
+      - "80:80"
+    restart: unless-stopped
